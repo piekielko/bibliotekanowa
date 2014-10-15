@@ -18,7 +18,7 @@
     </div>
     
     <div id="section4">
-        <img src="${pageContext.request.contextPath}/resources/marta.jpg" style="width:304px;height:228px">
+        
     </div>
 
     <div id="section2">
@@ -31,11 +31,11 @@
         <P>  The time on the server is ${serverTime}. </P>
     </div>
     
-    <div id="section4"
+    <div>
         <ul>
 		<li>
 			<a href="<c:url value="/biblioteka" />" >Biblioteka</a>
-                        <button type="<c:url value="/biblioteka" />">Biblioteka</button>
+                        
 		</li>
                 
         </ul>

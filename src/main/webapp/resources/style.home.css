@@ -8,34 +8,44 @@ and open the template in the editor.
     
 
 #section1 {
-    background-color:black;
+    background-color:#ADD8E6;
     color:white;
     text-align:center;
-   padding:5px
+    padding:5px
+    
+       
+}
+
+#section4 {
+    background-image: url('mapa02.gif');
+    height: 450px;
+    width: 1050px;
+    margin-top: 0px;
+    float:left;
+    background-color: #eeeeee;
+  
 }
 
 #section2 {
     line-height:30px;
     background-color:#eeeeee;
-    height:500px;
+    height:450px;
     width:200px;
-   float:left;
+   float:right;
    padding:5px;	 	
 }
 
 #section3 {
-    background-color:black;
+    background-color:#ADD8E6;
     color:white;
     clear:both;
     text-align:center;
     padding:5px;
 }
 
-#section4 {
-     float:right;
-     height:500px;
-     width:400px;
+
+   
     
-}
+
 
 
