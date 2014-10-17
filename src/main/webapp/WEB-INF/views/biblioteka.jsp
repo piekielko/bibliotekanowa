@@ -71,7 +71,7 @@
     
     
     <div id="tabela">
-               <table style="width: 100%">
+               <table style="width: 80%">
                       
                       <tr>
                       

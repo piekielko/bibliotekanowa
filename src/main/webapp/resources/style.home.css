@@ -17,9 +17,10 @@ and open the template in the editor.
 }
 
 #section4 {
-    background-image: url('mapa02.gif');
-    height: 500px;
-    width: 950px;
+    background-image: url('ksiazki.jpg');
+    
+    height: 100%;
+    width: 150%;
     margin-top: 0px;
     float:left;
     background-color: #eeeeee;
@@ -32,7 +33,7 @@ and open the template in the editor.
     height:500px;
     width:200px;
     float:right;
-     padding:5px;	 	
+    padding:5px;	 	
 }
 
 #section3 {
