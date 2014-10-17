@@ -2,25 +2,45 @@ package pl.altkom.biblioteka.model;
 
 import java.io.Serializable;
 import java.util.Comparator;
+import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 public class Ksiazka implements Serializable, Comparable {
 
     private long id;
+    
+    @NotEmpty(message="Pole wymagane")
     private String tytul;
+    
+    @NotEmpty(message="Pole wymagane")
     private String opis;
+    
+    @Pattern(regexp="[a-zA-Z]+", message="Pole nie może zawierać cyfr")
+    @NotEmpty(message="Pole wymagane")
     private String imieAutora;
+    
+    @Pattern(regexp="[a-zA-Z]+", message="Pole nie może zawierać cyfr")
+    @NotEmpty(message="Pole wymagane")
     private String nazwiskoAutora;
-    private String pochodzenieAutora;
+    
+    @Pattern(regexp="[a-zA-Z]+", message="Pole nie może zawierać cyfr")
+    @NotEmpty(message="Pole nie może być puste")
+    private String krajPochodzenia;
+    
+    @Range(min=1, max=99, message = "Liczba książek powinna się zawięrać pomiędzy 1 a 99")
     private int ilosc;
+    
+    @NotEmpty(message="Pole nie może być puste")
     private String kategoria;
 
-    public Ksiazka(long id, String tytul, String opis, String imieAutora, String nazwiskoAutora, String pochodzenieAutora, int ilosc, String kategoria) {
+    public Ksiazka(long id, String tytul, String opis, String imieAutora, String nazwiskoAutora, String krajPochodzenia, int ilosc, String kategoria) {
         this.id = id;
         this.tytul = tytul;
         this.opis = opis;
         this.imieAutora = imieAutora;
         this.nazwiskoAutora = nazwiskoAutora;
-        this.pochodzenieAutora = pochodzenieAutora;
+        this.krajPochodzenia = krajPochodzenia;
         this.ilosc = ilosc;
         this.kategoria = kategoria;
     }
@@ -68,12 +88,12 @@ public class Ksiazka implements Serializable, Comparable {
         this.nazwiskoAutora = nazwiskoAutora;
     }
 
-    public String getPochodzenieAutora() {
-        return pochodzenieAutora;
+    public String getKrajPochodzenia() {
+        return krajPochodzenia;
     }
 
-    public void setPochodzenieAutora(String pochodzenieAutora) {
-        this.pochodzenieAutora = pochodzenieAutora;
+    public void setKrajPochodzenia(String krajPochodzenia) {
+        this.krajPochodzenia = krajPochodzenia;
     }
 
     public int getIlosc() {

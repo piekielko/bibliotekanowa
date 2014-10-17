@@ -9,15 +9,19 @@
 <body>
 
 	<form:form modelAttribute="ksiazka">
-		Nazwa: <form:input path="nazwa" />
+		Tytul: <form:input path="tytul" />
 		<br>
 		Opis: <form:input path="opis" />
 		<br>
-				Cena: <form:input path="cena" />
+		imieAutora: <form:input path="imieAutora" />
 		<br>
-				Ilosc: <form:input path="ilosc" />
+                nazwiskoAutora: <form:input path="nazwiskoAutora" />
 		<br>
-				Kategoria: <form:input path="kategoria" />
+                krajPochodzenia: <form:input path="krajPochodzenia" />
+		<br>
+		Ilosc: <form:input path="ilosc" />
+		<br>
+		Kategoria: <form:input path="kategoria" />
 		<br>
 		<input type="submit" value="Zmie&#324;" />
 		<form:hidden path="id"/>

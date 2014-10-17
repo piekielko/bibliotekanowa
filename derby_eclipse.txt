@@ -30,7 +30,7 @@ CREATE TABLE ksiazki (
   opis    	VARCHAR(255),
   imieAutora    VARCHAR(255),
   nazwiskoAutora VARCHAR(255),
-  pochodzenieAutora VARCHAR(255),
+  krajPochodzenia VARCHAR(255),
   ilosc        INT,
   kategoria   VARCHAR(255)
 );

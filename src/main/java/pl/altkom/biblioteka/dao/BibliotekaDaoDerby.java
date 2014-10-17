@@ -33,13 +33,13 @@ public class BibliotekaDaoDerby implements BibliotekaDao {
 		// TODO Auto-generated method stub
 
 		try {
-			String sql = "INSERT INTO ksiazki(tytul,opis,imieAutora,nazwiskoAutora,pochodzenieAutora,ilosc,kategoria) values(?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO ksiazki(tytul,opis,imieAutora,nazwiskoAutora,krajPochodzenia,ilosc,kategoria) values(?,?,?,?,?,?,?)";
 			// String sql1 =
 			// "select id FROM ksiazki order by id desc FETCH FIRST ROW ONLY;";
 
 			// jdbcTemplate.execute(sql1);
 			jdbcTemplate.update(sql, new Object[] { k.getTytul(), k.getOpis(),
-					k.getImieAutora(), k.getNazwiskoAutora(), k.getPochodzenieAutora(), k.getIlosc(), k.getKategoria() });
+					k.getImieAutora(), k.getNazwiskoAutora(), k.getKrajPochodzenia(), k.getIlosc(), k.getKategoria() });
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
@@ -49,8 +49,8 @@ public class BibliotekaDaoDerby implements BibliotekaDao {
 
 	@Override
 	public void updateKsiazka(Ksiazka k) {
-		String SQL = "update ksiazki set tytul = ?, opis = ?, imieAutora = ?, nazwiskoautora = ?, pochodzenieAutora = ?, ilosc = ?, kategoria = ? where id = ?";
-		jdbcTemplate.update(SQL, k.getTytul(), k.getOpis(), k.getImieAutora(), k.getNazwiskoAutora(), k.getPochodzenieAutora(),
+		String SQL = "update ksiazki set tytul = ?, opis = ?, imieAutora = ?, nazwiskoautora = ?, krajPochodzenia = ?, ilosc = ?, kategoria = ? where id = ?";
+		jdbcTemplate.update(SQL, k.getTytul(), k.getOpis(), k.getImieAutora(), k.getNazwiskoAutora(), k.getKrajPochodzenia(),
 				k.getIlosc(), k.getKategoria(), k.getId());
 		return;
 	}

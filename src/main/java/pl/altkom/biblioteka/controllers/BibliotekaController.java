@@ -4,9 +4,11 @@ import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +23,7 @@ public class BibliotekaController {
 	private BibliotekaDao md;
 
 	@RequestMapping(value = "/biblioteka", method = RequestMethod.GET)
-	public String magazyn(Locale locale, Model model, HttpServletRequest request) {
+	public String biblioteka(Locale locale, Model model, HttpServletRequest request) {
 		boolean zmiana = false;
 		int id = 0;
 		int atrybut = 0;
@@ -54,10 +56,14 @@ public class BibliotekaController {
 		model.addAttribute(new Ksiazka());
 		return "biblioteka";
 	}
-
-	@RequestMapping(value = "/biblioteka", method = RequestMethod.POST)
-	public String bibliotekaDodaj(Locale locale, @ModelAttribute Ksiazka ksiazka,
-			Model model) {
+        
+        @RequestMapping(value = "/biblioteka", method = RequestMethod.POST)
+        public String bibliotekaDodaj(Locale locale, @Valid @ModelAttribute Ksiazka ksiazka, BindingResult result,
+        Model model) {
+                if (result.hasErrors()){
+                model.addAttribute("biblioteka", md.getAllSortedKsiazka(0,""));
+                return "biblioteka";
+                }
 
 		md.addKsiazka(ksiazka);
 		model.addAttribute("biblioteka", md.getAllSortedKsiazka(0, ""));

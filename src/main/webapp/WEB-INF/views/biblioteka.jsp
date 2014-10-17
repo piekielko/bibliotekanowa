@@ -2,7 +2,8 @@
 <!DOCTYPE>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
 <link href="${pageContext.request.contextPath}/resources/style.biblioteka.css" rel="stylesheet" type="text/css"/>
 <title>Insert title here</title>
 <style>
@@ -20,18 +21,30 @@
             <tr>
                 
 		<form:input path="tytul" name="tytul" placeholder="Tytul" requirde="true" />
+                <br>
+                <form:errors path="tytul" cssStyle="color: ?#?ff0000?;"/> 
 		<br>
 		<form:input path="opis" name="opis" placeholder="Opis" required="true"/>
+                <br>
+                <form:errors path="opis" cssStyle="color: ?#?ff0000?;"/>
 		<br>
                 <form:input path="imieAutora" name="imieAutora" placeholder="ImieAutora" required="true" />
                 <br>
+                <form:errors path="imieAutora" cssStyle="color: ?#?ff0000?;"/>
+                <br>
 		<form:input path="nazwiskoAutora" name="nazwiskoAutora" placeholder="NazwiskoAutora" required="true"/>
 		<br>
-                <form:input path="pochodzenieAutora" name="pochodzenieAutora" placeholder="PochodzenieAutora" required="true"/>
+                <form:errors path="nazwiskoAutora" cssStyle="color: ?#?ff0000?;"/>
+                <br>
+                <form:input path="krajPochodzenia" name="krajPochodzenia" placeholder="KrajPochodzenia" required="true"/>
+                <br>
+                <form:errors path="krajPochodzenia" cssStyle="color: ?#?ff0000?;"/>
                 <br>
 		<form:input path="ilosc" name="ilosc" placeholder="Ilosc" type="number"/>
 		<br>
 		<form:input path="kategoria" name="kategoria" placeholder="Kategoria" required="true"/>
+                <br>
+                <form:errors path="kategoria" cssStyle="color: ?#?ff0000?;"/>
 		<br>
              </tr>
              
@@ -68,7 +81,7 @@
 			<th><a href="biblioteka?sort=2">Opis</a></th>
 			<th><a href="biblioteka?sort=3">ImieAutora</a></th>
                         <th><a href="biblioteka?sort=4">NazwiskoAutora</a></th>
-                        <th><a href="biblioteka?sort=5">PochodzenieAutora</a></th>
+                        <th><a href="biblioteka?sort=5">KrajPochodzenia</a></th>
 			<th><a href="biblioteka?sort=6">Ilosc</a></th>
 			<th><a href="biblioteka?sort=7">Kategoria</a></th>
 			
@@ -92,11 +105,11 @@
 				<td><c:out value="${ksiazka.opis}" /></td>
 				<td><c:out value="${ksiazka.imieAutora}" /></td>
                                 <td><c:out value="${ksiazka.nazwiskoAutora}" /></td>
-                                <td><c:out value="${ksiazka.pochodzenieAutora}" /></td>
+                                <td><c:out value="${ksiazka.krajPochodzenia}" /></td>
 				<td><c:out value="${ksiazka.ilosc}" /></td>
 				<td><c:out value="${ksiazka.kategoria}" /></td>
-				<td><a href="magazyn?id=${ksiazka.id}&action=delete">Usu&#324;</a></td>
-				<td><a href="magazynzmien?id=${ksiazka.id}&action=update">Zmie&#324;</a>
+				<td><a href="biblioteka?id=${ksiazka.id}&action=delete">Usu&#324;</a></td>
+				<td><a href="bibliotekazmien?id=${ksiazka.id}&action=update">Zmie&#324;</a>
 				</td>
                                 
 			</tr>
